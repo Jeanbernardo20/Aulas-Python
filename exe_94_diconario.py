@@ -23,12 +23,20 @@ while True:
         break
 print('-='*30)
 
-print(f' Ao todo temos {len(galera)} pessoas cadastradas') 
+print(f' A) Ao todo temos {len(galera)} pessoas cadastradas') 
 media = soma / len(galera) 
-print(f' A média de idade é de {media:5.2f} anos. ')
-print('C) As mulheres cadastradas foram' end='')
+print(f' B) A média de idade é de {media:5.2f} anos. ')
+print(' C) As mulheres cadastradas foram', end='')
 print()
 for p in galera:
     if p['sexo'] in 'Ff':
-        print(f'{p["nome"]}', end='')
+        print(f'{p["nome"]}', end=' ')
 print()
+print(f' D) Listas das pesoas que estão acima da média: ')
+for p in galera:
+    if p['idade']>= media:
+        print('  ')
+        for k, v in p.items():
+            print(f'{k} = {v}; ', end=' ')
+        print()
+print('<< ENCERRADO >>')
